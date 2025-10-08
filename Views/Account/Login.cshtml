@@ -1,0 +1,35 @@
+﻿@using MediaAppFeladat.ViewModels;
+@model LoginViewModel;
+
+@{
+	ViewData["Title"] = "Login";
+	Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="account-container">
+	<div class="account_box">
+		<h2 class="text-center mb-4">Login</h2>
+		<form asp-action="Login" method="post">
+			@Html.AntiForgeryToken()
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="mb-3">
+				<label asp-for="Email" class="form-label"></label>
+				<input asp-for="Email" class="form_control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="Password" class="form-label"></label>
+				<input asp-for="Password" class="form_control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<input type="submit" value="Login" class="btn btm-sucess w-100 p-2"/>
+
+		</form>
+	</div>
+</div>
+
+@section Scripts{
+@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+	}
+}
