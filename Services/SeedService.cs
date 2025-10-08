@@ -25,12 +25,12 @@ namespace MediaAppFeladat.Services
                 await AddRoleAsync(roleManager, "User");
 
                 logger.LogInformation("Seeding admin user");
-                var adminEmail = "kaxirev388@fintehs.com";
+                var adminEmail = "apollohun20@gmail.com";
                 if (await userManager.FindByEmailAsync(adminEmail) == null)
                 {
                     var adminUser = new Users
                     {
-                        FullName = "Admin Man",
+                        FullName = "Apollo",
                         UserName = adminEmail,
                         NormalizedUserName = adminEmail.ToUpper(),
                         Email = adminEmail,

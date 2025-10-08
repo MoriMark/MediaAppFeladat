@@ -22,6 +22,11 @@
 				<input asp-for="Password" class="form_control" />
 				<span asp-validation-for="Password" class="text-danger"></span>
 			</div>
+			<div class="float-end">
+				<a asp-controller="Account" asp-action="VerifyEmail" class="text-decoration-none">
+					Forgot Password?
+				</a>
+			</div>
 			<input type="submit" value="Login" class="btn btm-sucess w-100 p-2"/>
 
 		</form>
