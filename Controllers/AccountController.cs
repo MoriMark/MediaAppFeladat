@@ -2,6 +2,7 @@
 using MediaAppFeladat.Services;
 using MediaAppFeladat.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -34,10 +35,29 @@ namespace MediaAppFeladat.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
+                }
+                if (result.IsLockedOut)
+                {
+                    var user = await userManager.FindByEmailAsync(model.Email);
+                    if (user == null)
+                    {
+                        ModelState.AddModelError("", "User not found!");
+                        return View(model);
+                    }
+
+                    var resetToken = await userManager.GeneratePasswordResetTokenAsync(user);
+                    var resetLink = Url.Action("ChangePassword", "Account", new { email = model.Email, token = resetToken }, Request.Scheme);
+
+                    var subject = "Locked out account information";
+                    var body = $"Your Account is Locked. Please Reset your password by clicking here: <a href='{resetLink}'> Reset Password</a>";
+
+                    await emailService.SendEmailAsync(model.Email, subject, body);
+                    ModelState.AddModelError("", "The account is locked out");
+                    return View();
                 }
                 else
                 {
