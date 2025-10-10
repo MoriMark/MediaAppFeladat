@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,6 +32,21 @@
         </nav>
     </header>
     <div class="container">
+        <div class="sidenav">
+            <button class="dropdown-btn">
+                Konfiguráció
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Eszközök listázása/felvétele</a>
+                <a href="#">Munkahelyek listázása/felvétele</a>
+            </div>
+            <a href="#">Media Center</a>
+            <a href="#">Statisztika</a>
+            <a href="#">Adminisztráció</a>
+            <a href="#">Profil</a>
+            <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Kijelentkezés</a>
+        </div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

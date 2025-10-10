@@ -152,5 +152,11 @@ namespace MediaAppFeladat.Controllers
             }
             return View(model);
         }
+
+        public async Task<IActionResult> Logut()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
