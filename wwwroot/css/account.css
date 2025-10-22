@@ -1,3 +1,120 @@
-﻿body {
-    
+﻿html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #1B09C9 0%, #06003F 50%, #1B09C9 100%);
+    background-repeat: no-repeat;
+}
+
+.account_container {
+    /* Rectangle 2 */
+
+    position: absolute;
+    width: 823px;
+    right: 53px;
+    top: 34px;
+    bottom: 34px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+#exoraimg {
+    position: absolute;
+    width: 260px;
+    height: 55px;
+    left: 372px;
+    top: 513px;
+    background: url(exora_feher_nev.png);
+}
+
+.text-center {
+    /* eControl */
+
+    margin:auto;
+    width: 180px;
+    height: 41px;
+    left: 1366px;
+    top: 111px;
+    font-family: 'Arista Pro Alternate';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 41px;
+    color: #3527FF;
+}
+
+#LoginButton {
+    /* Bejelentkezés */
+
+    margin:auto;
+    width: 190px;
+    height: 34px;
+    left: 1361px;
+    top: 397px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+#LoginRectangle {
+    /* Rectangle 3 */
+
+    margin: auto;
+    width: 480px;
+    height: 60px;
+    left: 1216px;
+    top: 384px;
+    background: #3527FF;
+    border-radius: 35px;
+}
+
+.form-control {
+    /* Rectangle 4 */
+
+    box-sizing: border-box;
+    margin:auto;
+    width: 480px;
+    height: 60px;
+    left: 1216px;
+    top: 205px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+}
+
+.float-end {
+    /* Elfelejtettem a jelszavamat */
+
+    margin:auto;
+    width: 312px;
+    height: 29px;
+    left: 1300px;
+    top: 467px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    color: #3527FF;
+}
+
+#showPassword {
+    /* 🦆 icon "eye outline" */
+
+    margin:auto;
+    width: 18px;
+    height: 12px;
+    left: 1658px;
+    top: 309px;
 }

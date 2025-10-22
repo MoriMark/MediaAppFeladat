@@ -21,10 +21,10 @@ namespace MediaAppFeladat
 
             builder.Services.AddIdentity<Users, IdentityRole>(options =>
             {
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequiredLength = 6;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = bool.Parse(builder.Configuration["PasswordSettings:RequireNonAlphanumeric"]);
+                options.Password.RequiredLength = int.Parse(builder.Configuration["PasswordSettings:RequiredLength"]);
+                options.Password.RequireUppercase = bool.Parse(builder.Configuration["PasswordSettings:RequireUppercase"]);
+                options.Password.RequireLowercase = bool.Parse(builder.Configuration["PasswordSettings:RequireLowercase"]);
                 options.User.RequireUniqueEmail = true;
                 options.SignIn.RequireConfirmedAccount = false;
                 options.SignIn.RequireConfirmedEmail = false;

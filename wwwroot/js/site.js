@@ -16,4 +16,13 @@ for (i = 0; i < dropdown.length; i++) {
             dropdownContent.style.display = "block";
         }
     });
+}
+
+function showPassword() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
 } 
